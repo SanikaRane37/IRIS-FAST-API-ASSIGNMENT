@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "34bf9dab-90fa-4e9d-9fb2-50dd42f1813e",
+		"name": "capbudg API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36749955"
+	},
+	"item": [
+		{
+			"name": "Table Names",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/list_tables",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"list_tables"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Table Names",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/list_tables",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"list_tables"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sat, 10 May 2025 19:16:59 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "174"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tables\": [\n        \"Initial Investment\",\n        \"Cashflow Details\",\n        \"Discount Rate\",\n        \"Working Capital\",\n        \"Growth Rates\",\n        \"Year\",\n        \"Salvage Value\",\n        \"Operating Cashflows\",\n        \"Book Value & Depreciation\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Table Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/get_table_details?table_name=YourTableName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"get_table_details"
+					],
+					"query": [
+						{
+							"key": "table_name",
+							"value": "YourTableName"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Table Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/get_table_details?table_name=Operating Cashflows",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"get_table_details"
+							],
+							"query": [
+								{
+									"key": "table_name",
+									"value": "Operating Cashflows"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sat, 10 May 2025 19:17:13 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "249"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"table_name\": \"Operating Cashflows\",\n    \"row_names\": [\n        \"Lifetime Index\",\n        \"Revenues\",\n        \" -Var. Expenses\",\n        \" - Fixed Expenses\",\n        \"EBITDA\",\n        \" - Depreciation\",\n        \"EBIT\",\n        \" -Tax\",\n        \"EBIT(1-t)\",\n        \" + Depreciation\",\n        \" - ∂ Work. Cap\",\n        \"NATCF\",\n        \"Discount Factor\",\n        \"Discounted CF\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Row Sum",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/row_sum?table_name=YourTableName&row_name=YourRowName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"row_sum"
+					],
+					"query": [
+						{
+							"key": "table_name",
+							"value": "YourTableName"
+						},
+						{
+							"key": "row_name",
+							"value": "YourRowName"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Row Sum",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/row_sum?table_name=Operating Cashflows&row_name=NATCF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"row_sum"
+							],
+							"query": [
+								{
+									"key": "table_name",
+									"value": "Operating Cashflows"
+								},
+								{
+									"key": "Operating Cashflows",
+									"value": "NATCF",
+									"disabled": true
+								},
+								{
+									"key": "row_name",
+									"value": "NATCF"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sat, 10 May 2025 19:17:34 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "80"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"table_name\": \"Operating Cashflows\",\n    \"row_name\": \"NATCF\",\n    \"sum\": 109982.20000000004\n}"
+				}
+			]
+		}
+	]
+}
