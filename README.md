@@ -1,7 +1,3 @@
-Sure! Below is a properly formatted version of the content you provided, using Markdown:
-
----
-
 # IRIS-FAST-API-ASSIGNMENT
 
 ### Limitation Notice
